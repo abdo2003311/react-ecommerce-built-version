@@ -14,6 +14,7 @@ app.get('/*.js', function (req, res) {
 });
 
 app.get('*', function (req, res) {
+    console.log(req.path, __dirname)
     res.sendFile(path.join(__dirname, 'client/public', 'index.html')); //serving build folder
 });
 app.listen(port, () => {
